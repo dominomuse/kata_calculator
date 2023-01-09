@@ -1,10 +1,23 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        String firstArg = args[0];
-        String result = calc(firstArg);
-        System.out.println(result);
+        Scanner inputScanner = new Scanner(System.in);
+        while(true) {
+            System.out.println("Input:");
+            String expression = inputScanner.nextLine();
+            System.out.println("Output:");
+            try {
+                String result = calc(expression);
+                System.out.println(result);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+        // inputScanner.close();
     }
+
 
     public static String calc(String input) {
         String[] tokens = input.split(" ");
@@ -33,7 +46,6 @@ public class Main {
 
     private static int parseInt(String input) {
         int result = Integer.parseInt(input);
-
 
         if (result < 1 || result > 10) {
             throw new IllegalArgumentException(result + " неподходящее число");

@@ -4,6 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner inputScanner = new Scanner(System.in);
+
         while(true) {
             System.out.println("Input:");
             String expression = inputScanner.nextLine();
@@ -13,9 +14,10 @@ public class Main {
                 System.out.println(result);
             } catch (Exception e) {
                 System.out.println(e);
+                inputScanner.close();
+                System.exit(0);
             }
         }
-        // inputScanner.close();
     }
 
 
